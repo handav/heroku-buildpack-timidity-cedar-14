@@ -26,6 +26,9 @@ APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
+# clear old cache
+rm $APT_CACHE_DIR/archives/*.deb
+
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR -o Dir::Etc::SourceList=$SOURCE_LIST"
 
 apt-get $APT_OPTIONS update | indent
@@ -60,5 +63,3 @@ export LD_LIBRARY_PATH="\$HOME/$LIB_PATH:\$LD_LIBRARY_PATH"
 #export MAGICK_CODER_FILTER_PATH="\$HOME/$MAGICK_CODER_FILTER_PATH"
 #export MAGICK_CODER_MODULE_PATH="\$HOME/$MAGICK_CODER_MODULE_PATH"
 EOF
-
-
