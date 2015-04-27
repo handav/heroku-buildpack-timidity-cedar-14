@@ -9,6 +9,7 @@ TIMIDITY_VERSION=2.13.2-40.2
 FLUID_SOUNDFONT_GM_VERSION=3.1-5
 BIN_PATH=.apt/usr/bin
 LIB_PATH=.apt/usr/lib/x86_64-linux-gnu/
+ETC_PATH=.apt/etc/timidity
 #MAGICK_CODER_MODULE_PATH=$LIB_PATH/ImageMagick-6.8.9/modules-Q16/coders
 #MAGICK_CODER_FILTER_PATH=$LIB_PATH/ImageMagick-6.8.9/modules-Q16/filters
 
@@ -46,6 +47,11 @@ cd $BUILD_DIR/$BIN_PATH
 
 # manually link binary
 ln -s timidiy timidity-im6
+
+# edit timidity.cfg to enable fluid soundfont
+cd $BUILD_DIR/$ETC_PATH
+sed -i '35s/^#*//' timidity.cfg
+sed -i '32s/^/#/' timidity.cfg
 
 echo "Testing timidity installation" | arrow
 export LD_LIBRARY_PATH="$BUILD_DIR/$LIB_PATH:$LD_LIBRARY_PATH"
