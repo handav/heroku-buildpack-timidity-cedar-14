@@ -26,9 +26,6 @@ APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
-# clear old cache
-rm $APT_CACHE_DIR/archives/*.deb
-
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR -o Dir::Etc::SourceList=$SOURCE_LIST"
 
 apt-get $APT_OPTIONS update | indent
@@ -47,9 +44,8 @@ echo "Linking binaries" | arrow
 
 cd $BUILD_DIR/$BIN_PATH
 
-for binary in *-im6; do
-  ln -s $binary ${binary%-im6*}
-done
+# manually link binary
+ln -s timidiy timidity-im6
 
 echo "Testing timidity installation" | arrow
 export LD_LIBRARY_PATH="$BUILD_DIR/$LIB_PATH:$LD_LIBRARY_PATH"
