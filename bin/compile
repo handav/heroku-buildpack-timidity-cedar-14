@@ -48,10 +48,12 @@ cd $BUILD_DIR/$BIN_PATH
 # manually link binary
 ln -s timidiy timidity-im6
 
-# edit timidity.cfg to enable fluid soundfont
+# edit configs to enable fluid soundfont
 cd $BUILD_DIR/$ETC_PATH
 sed -i '32s/^/#/' timidity.cfg
 echo 'source ~/.apt/etc/timidity/fluidr3_gm.cfg' >> timidity.cfg
+sed -i '1s/^/#/' fluidr3_gm.cfg
+sed -i '1i dir ~/.apt/usr/share/sounds/sf2' fluidr3_gm.cfg
 
 echo "Testing timidity installation" | arrow
 export LD_LIBRARY_PATH="$BUILD_DIR/$LIB_PATH:$LD_LIBRARY_PATH"
