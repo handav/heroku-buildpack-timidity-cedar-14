@@ -1,13 +1,10 @@
-Heroku Buildpack ImageMagick Cedar 14
+Heroku Buildpack Timidity Cedar 14
 ===========================
 
-Use the latest version of ImageMagick inside Heroku  _Cedar 14_.
-
-ImageMagick 6.8 [won't be
-merged](https://bugs.launchpad.net/ubuntu/+source/imagemagick/+bug/1179054) into Ubuntu until Ubuntu vivid is released.
+Use the latest version of Timidity inside Heroku  _Cedar 14_.
 
 This buildpack downloads and installs the [vivid
-packages](https://launchpad.net/ubuntu/vivid/arm64/imagemagick/8:6.8.9.9-2)
+packages](https://launchpad.net/ubuntu/vivid/arm64/timidity/2.13.2-40.2)
 manually.
 
 ## Usage
@@ -21,8 +18,8 @@ heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-mult
 
 Then, create a `.buildpacks` file inside your app:
 ```
-https://github.com/ello/heroku-buildpack-imagemagick-cedar-14
-https://github.com/heroku/heroku-buildpack-nodejs
+https://github.com/hyshka/heroku-buildpack-timidity-cedar-14
+https://github.com/heroku/heroku-buildpack-ruby
 ```
 
 This example was based on the nodejs buildpack, but it can be used with
@@ -33,9 +30,9 @@ If it is not working with yours, please report a bug.
 
 Thanks to the creator and contributors of the original
 [heroku-buildpack-image-magick](https://github.com/mcollina/heroku-buildpack-imagemagick)
-for many of the ideas used here
+for many of the ideas used here and [ello's heroku-buildpack-imagemagick-cedar-14](https://github.com/ello/heroku-buildpack-imagemagick-cedar-14) from which this is forked.
 
-## Contributing to heroku-buildpack-imagemagick-cedar-14
+## Contributing to heroku-buildpack-timidity-cedar-14
 
 * Check out the latest master to make sure the feature hasn't been
   implemented or the bug hasn't been fixed yet
