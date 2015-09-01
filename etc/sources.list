@@ -56,5 +56,5 @@ deb http://extras.ubuntu.com/ubuntu trusty main
 deb-src http://extras.ubuntu.com/ubuntu trusty main
 
 deb http://us.archive.ubuntu.com/ubuntu/ vivid main
+deb http://us.archive.ubuntu.com/ubuntu/ vivid universe
 deb http://us.archive.ubuntu.com/ubuntu/ vivid-proposed main
-
