@@ -1,4 +1,6 @@
 #! /bin/bash
 
+# must echo something human readable 
+echo 'timidity'
 # this buildpack can always be used
 exit 0
