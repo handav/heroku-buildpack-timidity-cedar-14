@@ -60,8 +60,8 @@ export LD_LIBRARY_PATH="$BUILD_DIR/$LIB_PATH:$LD_LIBRARY_PATH"
 $BUILD_DIR/$BIN_PATH/identify -list format | indent
 
 echo "~~~~~~~~~~~THIS WILL TEST TO SEE IF TIMIDITY CONFIG EXISTS:"
-echo ls -la /etc/timidity
-echo cat /etc/timidity/timidity.cfg
+echo "$(ls -la /etc/timidity)"
+echo "$cat /etc/timidity/timidity.cfg"
 
 echo "Building runtime environment" | arrow
 mkdir -p $BUILD_DIR/.profile.d
